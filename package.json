@@ -1,24 +1,69 @@
 {
-  "name": "spinzone",
+  "name": "web",
+  "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "build": "next build",
+    "check-types": "next typegen && tsc --noEmit",
+    "dev": "next dev --port 3000",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "prepare": "husky install",
+    "start": "next start",
+    "test": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:ui": "playwright test --ui",
+    "test:watch": "vitest"
+  },
+  "lint-staged": {
+    "*.{json, md, css, js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-packagejson",
+      "prettier-plugin-tailwindcss"
+    ]
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "next": "16.1.5",
+    "postcss": "^8.5.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
-    "prettier": "^3.7.4",
-    "turbo": "^2.8.10",
-    "typescript": "5.9.2"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "npm@10.9.1",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
+    "@eslint/js": "^9.21.0",
+    "@next/eslint-plugin-next": "^16.1.6",
+    "@playwright/test": "^1.58.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^22.15.3",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "^4.7.0",
+    "@vitest/coverage-v8": "^4.0.18",
+    "eslint": "^9.39.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^17.3.0",
+    "husky": "^8.0.0",
+    "jsdom": "^27.4.0",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "prettier-plugin-packagejson": "^3.0.0",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "typescript": "5.9.2",
+    "typescript-eslint": "^8.56.1",
+    "vitest": "^4.0.18"
+  }
 }
