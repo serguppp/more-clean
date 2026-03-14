@@ -30,9 +30,11 @@
     ]
   },
   "dependencies": {
+    "@payloadcms/next": "^3.79.0",
     "@tailwindcss/postcss": "^4.2.1",
     "daisyui": "^5.5.19",
     "next": "16.1.5",
+    "payload": "^3.79.0",
     "postcss": "^8.5.8",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

@@ -3,7 +3,7 @@ import { expect, it } from "vitest";
 
 import Home from "./page";
 
-it("should render More Clean logos", () => {
+it("should render More Clean logo", () => {
   render(<Home />);
 
   const logos = screen.getAllByAltText("More Clean Logo");
