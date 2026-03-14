@@ -13,4 +13,9 @@ export default defineConfig({
     },
     exclude: [...configDefaults.exclude, "tests-e2e/**"],
   },
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
 });

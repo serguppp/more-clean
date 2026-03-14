@@ -3,12 +3,10 @@ import { expect, it } from "vitest";
 
 import Home from "./page";
 
-it("should render two Turborepo logos", () => {
+it("should render More Clean logos", () => {
   render(<Home />);
 
-  const logos = screen.getAllByAltText("Turborepo logo");
-
-  expect(logos).toHaveLength(2);
+  const logos = screen.getAllByAltText("More Clean Logo");
 
   expect(logos[0]).toBeInTheDocument();
 });
